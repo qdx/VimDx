@@ -1,0 +1,72 @@
+" git wrapper
+Bundle 'tpope/vim-fugitive'
+" fast html coding
+Bundle 'mattn/emmet-vim'
+" file browser
+Bundle 'scrooloose/nerdtree'
+" comment just anything
+Bundle 'scrooloose/nerdcommenter'
+" personal wiki
+Bundle 'vimwiki'
+" color scheme
+Bundle 'chriskempson/vim-tomorrow-theme'
+" nerdtree plugin to support multiple tabs
+Bundle 'jistr/vim-nerdtree-tabs'
+" context switch to better line numbers
+" Bundle 'myusuf3/numbers.vim'
+Bundle 'sjl/gundo.vim'
+" vim plugin to use ack
+Bundle 'mileszs/ack.vim'
+" path, mru, tag, finder...
+Bundle 'kien/ctrlp.vim'
+" ruby support
+Bundle 'vim-ruby/vim-ruby'
+" rails support
+Bundle 'tpope/vim-rails'
+" shell in vim
+Bundle 'oplatek/Conque-Shell'
+" surround characters
+Bundle 'tpope/vim-surround'
+" auto close matching characters
+Bundle 'Townk/vim-autoclose'
+" multiple cursors!
+Bundle 'terryma/vim-multiple-cursors'
+" manipulate vim sessions
+" Bundle 'vim-scripts/sessionman.vim'
+" match more than brackets
+Bundle 'matchit.zip'
+" enhanced status line
+Bundle 'bling/vim-airline'
+" move around easier
+Bundle 'Lokaltog/vim-easymotion'
+" make gvim colorscheme work for terminal
+Bundle 'godlygeek/csapprox'
+" visually display indent level
+Bundle 'nathanaelkane/vim-indent-guides'
+" restore the cursor position, folding, etc after restart
+" Bundle 'vim-scripts/restore_view.vim'
+" show git diff annotations in the left column
+Bundle 'airblade/vim-gitgutter'
+" better support to deal with variants of words, or name convention
+" Bundle 'tpope/vim-abolish'
+" check syntax errors
+Bundle 'scrooloose/syntastic'
+" post gist using vim
+" Bundle 'mattn/gist-vim'
+" easy align on specific characters
+Bundle 'godlygeek/tabular'
+" class structure dispaly
+Bundle 'majutsushi/tagbar'
+" autocomplete
+Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Shougo/neocomplcache'
+" code snippets
+" Bundle 'honza/vim-snippets'
+" python enhancement
+Bundle 'klen/python-mode'
+Bundle 'pythoncomplete'
+" haskell enhancement
+Bundle 'lukerandall/haskellmode-vim'
+Bundle 'dag/vim2hs'
+" css enhancement
+Bundle 'hail2u/vim-css3-syntax'
