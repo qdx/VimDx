@@ -65,8 +65,16 @@ Bundle 'Valloric/YouCompleteMe'
 " python enhancement
 Bundle 'klen/python-mode'
 Bundle 'pythoncomplete'
+Bundle 'python.vim'
 " haskell enhancement
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'dag/vim2hs'
 " css enhancement
 Bundle 'hail2u/vim-css3-syntax'
+" scala enhancement
+Bundle 'derekwyatt/vim-scala'
+Bundle 'derekwyatt/vim-sbt'
+" javascript enhancement
+Bundle 'pangloss/vim-javascript'
+" json enhancement
+Bundle 'elzr/vim-json'

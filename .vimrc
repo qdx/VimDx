@@ -12,6 +12,14 @@ set expandtab
 set autoindent
 set smartindent
 set smarttab
+" assume dark background
+set background=dark
+" automatically detect file types
+filetype plugin indent on
+" syntax highlighting
+syntax on
+set mouse=a
+set mousehide
 " change the leader key
 let mapleader = ','
 let g:neocomplcache_enable_at_startup = 1
@@ -22,9 +30,9 @@ function! InitializeDirectories()
   let prefix = 'vim'
   let dir_list = {
         \ 'backup' : 'backupdir',
-        \ 'views' : 'viewdir',
-        \ 'swap' : 'directory',
-        \ 'undo' : 'undodir'}
+        \ 'views'  : 'viewdir',
+        \ 'swap'   : 'directory',
+        \ 'undo'   : 'undodir'}
   let common_dir = parent . '/.' . prefix
   for [dirname, settingname] in items(dir_list)
     let directory = common_dir . dirname . '/'
@@ -45,12 +53,12 @@ endfunction
 call InitializeDirectories()
 
 
-" vundle
+" vundle setup
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-filetype plugin indent on
+" use bundle file
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
