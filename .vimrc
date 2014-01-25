@@ -15,13 +15,54 @@ set smarttab
 " assume dark background
 set background=dark
 " automatically detect file types
-" syntax highlighting
+" syntax highlighting on
 syntax on
+" auto detect mouse
 set mouse=a
+" hide mouse when typing
 set mousehide
+" allow for cursor beyond last character
+set virtualedit=onemore
+" store a lot history than default 20
+set history=1000
+" allow buffer switching without saving
+" set hidden
+" enable backup
+set backup
+" use persistent undo
+set undofile
+" maximum number of changes that can be undone
+set undolevels=1000
+" maximum number lines to save for undo on a buffer reload
+set undoreload=10000
+" appearance
+" show current mode
+set showmode
+" highlight current line
+set cursorline
+" show matching brackets
+set showmatch
+" find as you type
+set incsearch 
+" case insensitive search
+set ignorecase
+" Lines to scroll when cursor leaves screen
+set scrolljump=5
+" minimum lines to keep above and below cursor
+set scrolloff=5
+" Highlight problematic whitspaces
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace "
+" do not wrap long lines
+set nowrap
+" split windows on the right
+set splitright
+" split windows below
+set splitbelow
+" windows can be 0 line hight
+" set winminheight=0
 " change the leader key
 let mapleader = ','
-let g:neocomplcache_enable_at_startup = 1
 
 " Initialize directories, mainly borrowed from Steve who wrote spf13-vim configuration
 function! InitializeDirectories()
@@ -100,6 +141,8 @@ nmap <F3> <ESC>:NERDTreeToggle<CR>
 nmap <silent><F4> :set invhlsearch<CR>
 " toggle spell check
 nmap <silent><F6> :set spell!<CR><BAR>:echo "spell check:" . strpart("offon", 3 * &spell, 3)<CR>
+" avoid auto indenting when pasting from other place to terminal
+set pastetoggle=<F7>
 " toggle gundo tree
 nmap <F10> :GundoToggle<CR>
 " open up vimrc in a new tab
