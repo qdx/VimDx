@@ -15,7 +15,6 @@ set smarttab
 " assume dark background
 set background=dark
 " automatically detect file types
-filetype plugin indent on
 " syntax highlighting
 syntax on
 set mouse=a
@@ -58,6 +57,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+filetype plugin indent on
 " use bundle file
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
