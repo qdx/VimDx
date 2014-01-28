@@ -1,3 +1,8 @@
+" set vim to support 256 colors since gnome-terminal do support that
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
 " general settings
 set nocompatible
 " hybrid line number
@@ -92,7 +97,6 @@ function! InitializeDirectories()
 endfunction
 call InitializeDirectories()
 
-
 " vundle setup
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -133,6 +137,9 @@ let g:vimwiki_list=[{'path' : '~/.vimwiki/main',
       \ {'path' : '~/.vimwiki/Mathematica/',
       \'path_html' : '~/.vimwiki/Mathematica/html'} ]
 
+" airline
+set laststatus=2
+
 " MRU
 nmap <F2> :CtrlPMRU<CR>
 " toggle nerd tree with
@@ -156,3 +163,5 @@ nmap <c-h> <c-w>h
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
+
+

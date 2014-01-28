@@ -28,7 +28,7 @@ Bundle 'oplatek/Conque-Shell'
 " surround characters
 Bundle 'tpope/vim-surround'
 " auto close matching characters
-Bundle 'Townk/vim-autoclose'
+"Bundle 'Townk/vim-autoclose'
 " multiple cursors!
 Bundle 'terryma/vim-multiple-cursors'
 " manipulate vim sessions
