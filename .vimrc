@@ -44,7 +44,7 @@ set undoreload=10000
 " show current mode
 set showmode
 " highlight current line
-set cursorline
+set nocursorline
 " show matching brackets
 set showmatch
 " find as you type

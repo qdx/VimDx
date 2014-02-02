@@ -78,3 +78,12 @@ Bundle 'derekwyatt/vim-sbt'
 Bundle 'pangloss/vim-javascript'
 " json enhancement
 Bundle 'elzr/vim-json'
+" complete for haskell
+"Bundle 'eagletmt/neco-ghc'
+" type checking and error checking
+Bundle 'eagletmt/ghcmod-vim'
+" haskell enhancement
+Bundle 'lukerandall/haskellmode-vim'
+" display unicode in haskell source file
+Bundle 'Twinside/vim-haskellConceal'
+
