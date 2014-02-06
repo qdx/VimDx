@@ -8,31 +8,23 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 " personal wiki
 Bundle 'vimwiki/vimwiki'
-" color scheme
+" color schemes
 Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'altercation/vim-colors-solarized'
 " nerdtree plugin to support multiple tabs
 Bundle 'jistr/vim-nerdtree-tabs'
-" context switch to better line numbers
-" Bundle 'myusuf3/numbers.vim'
+" undo tree
 Bundle 'sjl/gundo.vim'
 " vim plugin to use ack
 Bundle 'mileszs/ack.vim'
 " path, mru, tag, finder...
 Bundle 'kien/ctrlp.vim'
-" ruby support
-Bundle 'vim-ruby/vim-ruby'
-" rails support
-Bundle 'tpope/vim-rails'
 " shell in vim
 Bundle 'oplatek/Conque-Shell'
 " surround characters
 Bundle 'tpope/vim-surround'
-" auto close matching characters
-"Bundle 'Townk/vim-autoclose'
 " multiple cursors!
 Bundle 'terryma/vim-multiple-cursors'
-" manipulate vim sessions
-" Bundle 'vim-scripts/sessionman.vim'
 " match more than brackets
 Bundle 'matchit.zip'
 " enhanced status line
@@ -43,56 +35,85 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'godlygeek/csapprox'
 " visually display indent level
 Bundle 'nathanaelkane/vim-indent-guides'
-" restore the cursor position, folding, etc after restart
-" Bundle 'vim-scripts/restore_view.vim'
-" show git diff annotations in the left column
-if !WINDOWS()
-  " there is a bug in git-gutter on windows, so leave it for now
-  Bundle 'airblade/vim-gitgutter'
-endif
-" better support to deal with variants of words, or name convention
 " Bundle 'tpope/vim-abolish'
 " check syntax errors
 Bundle 'scrooloose/syntastic'
-" post gist using vim
-" Bundle 'mattn/gist-vim'
 " easy align on specific characters
 Bundle 'godlygeek/tabular'
 " class structure dispaly
 Bundle 'majutsushi/tagbar'
+" encoding plugin
+Bundle 'vim-scripts/FencView.vim'
+
+"======================================================="
+" Platform dependent
+"======================================================="
 " autocomplete
 if WINDOWS()
   Bundle 'Shougo/neocomplcache'
   Bundle 'Shougo/neosnippet'
   " code snippets
   Bundle 'honza/vim-snippets'
-  " encoding plugin
-  Bundle 'vim-scripts/FencView.vim'
 else
+  " there is a bug in git-gutter on windows, so leave it for now
+  " show git diff annotations in the left column
+  " better support to deal with variants of words, or name convention
+  Bundle 'airblade/vim-gitgutter'
   Bundle 'Valloric/YouCompleteMe'
 endif
+"======================================================="
+
+
+"======================================================="
+" Programming language Enhancemeng
+"======================================================="
 " python enhancement
 Bundle 'klen/python-mode'
 Bundle 'pythoncomplete'
 Bundle 'python.vim'
+
 " haskell enhancement
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'dag/vim2hs'
-" css enhancement
-Bundle 'hail2u/vim-css3-syntax'
-" scala enhancement
-Bundle 'derekwyatt/vim-scala'
-Bundle 'derekwyatt/vim-sbt'
-" javascript enhancement
-Bundle 'pangloss/vim-javascript'
-" json enhancement
-Bundle 'elzr/vim-json'
-" complete for haskell
-"Bundle 'eagletmt/neco-ghc'
 " type checking and error checking
 Bundle 'eagletmt/ghcmod-vim'
-" haskell enhancement
-Bundle 'lukerandall/haskellmode-vim'
 " display unicode in haskell source file
 Bundle 'Twinside/vim-haskellConceal'
 
+" css enhancement
+Bundle 'hail2u/vim-css3-syntax'
+
+" scala enhancement
+Bundle 'derekwyatt/vim-scala'
+Bundle 'derekwyatt/vim-sbt'
+
+" javascript enhancement
+Bundle 'pangloss/vim-javascript'
+
+" json enhancement
+Bundle 'elzr/vim-json'
+
+" ruby support
+Bundle 'vim-ruby/vim-ruby'
+" rails support
+Bundle 'tpope/vim-rails'
+"======================================================="
+
+
+" complete for haskell
+" Bundle 'eagletmt/neco-ghc'
+"
+" context switch to better line numbers
+" Bundle 'myusuf3/numbers.vim'
+"
+" post gist using vim
+" Bundle 'mattn/gist-vim'
+"
+" restore the cursor position, folding, etc after restart
+" Bundle 'vim-scripts/restore_view.vim'
+"
+" auto close matching characters
+" Bundle 'Townk/vim-autoclose'
+"
+" manipulate vim sessions
+" Bundle 'vim-scripts/sessionman.vim'

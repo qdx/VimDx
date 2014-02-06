@@ -247,7 +247,7 @@ noremap <c-l> <c-w>l
 
 " color schemes
 if WINDOWS()
-  colorscheme koehler
+  colorscheme vividchalk
 else
   colorscheme Tomorrow-Night-Bright
 endif
