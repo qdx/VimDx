@@ -18,9 +18,6 @@ if has('gui_running')
   set guioptions-=T           " Remove the toolbar
   set lines=40                " 40 lines of text instead of 24
   set guifont=Consolas:h11:cANSI	"set font
-  colorscheme koehler
-else
-  colorscheme Tomorrow-Night-Bright
 endif
 
 " set vim to support 256 colors since gnome-terminal do support that
@@ -246,3 +243,9 @@ noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
 
+" color schemes
+if WINDOWS()
+  colorscheme koehler
+else
+  colorscheme Tomorrow-Night-Bright
+endif
