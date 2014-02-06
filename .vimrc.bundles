@@ -7,7 +7,7 @@ Bundle 'scrooloose/nerdtree'
 " comment just anything
 Bundle 'scrooloose/nerdcommenter'
 " personal wiki
-Bundle 'vimwiki'
+Bundle 'vimwiki/vimwiki'
 " color scheme
 Bundle 'chriskempson/vim-tomorrow-theme'
 " nerdtree plugin to support multiple tabs
@@ -46,7 +46,10 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " restore the cursor position, folding, etc after restart
 " Bundle 'vim-scripts/restore_view.vim'
 " show git diff annotations in the left column
-Bundle 'airblade/vim-gitgutter'
+if !WINDOWS()
+  " there is a bug in git-gutter on windows, so leave it for now
+  Bundle 'airblade/vim-gitgutter'
+endif
 " better support to deal with variants of words, or name convention
 " Bundle 'tpope/vim-abolish'
 " check syntax errors
@@ -58,10 +61,16 @@ Bundle 'godlygeek/tabular'
 " class structure dispaly
 Bundle 'majutsushi/tagbar'
 " autocomplete
-Bundle 'Valloric/YouCompleteMe'
-"Bundle 'Shougo/neocomplcache'
-" code snippets
-" Bundle 'honza/vim-snippets'
+if WINDOWS()
+  Bundle 'Shougo/neocomplcache'
+  Bundle 'Shougo/neosnippet'
+  " code snippets
+  Bundle 'honza/vim-snippets'
+  " encoding plugin
+  Bundle 'vim-scripts/FencView.vim'
+else
+  Bundle 'Valloric/YouCompleteMe'
+endif
 " python enhancement
 Bundle 'klen/python-mode'
 Bundle 'pythoncomplete'

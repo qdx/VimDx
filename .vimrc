@@ -1,8 +1,37 @@
+silent function! WINDOWS()
+  return  (has('win16') || has('win32') || has('win64'))
+endfunction
+
+" setting up for windows
+if WINDOWS()
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+  " the following should actually be triggered when system is GBK encoded, not
+  " just on windows.
+  set encoding=utf-8
+  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+  set langmenu=zh_CN.UTF-8
+  language message zh_CN.UTF-8
+endif
+
+" setting up for gvim
+if has('gui_running')
+  set guioptions-=T           " Remove the toolbar
+  set lines=40                " 40 lines of text instead of 24
+  set guifont=Consolas:h11:cANSI	"set font
+  colorscheme koehler
+else
+  colorscheme Tomorrow-Night-Bright
+endif
+
 " set vim to support 256 colors since gnome-terminal do support that
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
+" solve the problem where backspace cannot delete in insert mode
+set backspace=indent,eol,start
+" encoding used in vim scripts
+scriptencoding utf-8
 " general settings
 set nocompatible
 " hybrid line number
@@ -102,18 +131,20 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-filetype plugin indent on
 " use bundle file
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
+filetype plugin indent on
+filetype plugin on
 
-" colorscheme 
-colorscheme Tomorrow-Night-Bright
 
 " emmet
 let g:user_emmet_expandabbr_key = '<c-z>'
 let g:use_emmet_complete_tag = 1
+
+" disallow nerdtree to start on gvim start
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 " vimwiki
 let g:vimwiki_use_mouse=1
@@ -140,6 +171,55 @@ let g:vimwiki_list=[{'path' : '~/.vimwiki/main',
 " airline
 set laststatus=2
 
+" neocomplete config from spf13
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_auto_delimiter = 1
+let g:neocomplcache_max_list = 15
+let g:neocomplcache_force_overwrite_completefunc = 1
+
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+      \ }
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns._ = '\h\w*'
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+
+" <TAB>: completion.
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+
+" fencview
+let g:fencview_autodetect = 0
+
 " MRU
 nmap <F2> :CtrlPMRU<CR>
 " toggle nerd tree with
@@ -152,16 +232,17 @@ nmap <silent><F6> :set spell!<CR><BAR>:echo "spell check:" . strpart("offon", 3 
 set pastetoggle=<F7>
 " toggle gundo tree
 nmap <F10> :GundoToggle<CR>
+" Map FencView with
+map <F11> :FencView<CR>
 " open up vimrc in a new tab
 nmap <F12> :tabnew ~/.vimrc<CR>
 
 " map some insert mode shortcut
-imap <c-l> <End>
-imap <c-h> <Home>
+inoremap <c-l> <End>
+inoremap <c-h> <Home>
 " map normal mode window moves
-nmap <c-h> <c-w>h
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-l> <c-w>l
-
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
 
