@@ -2,6 +2,9 @@ silent function! WINDOWS()
 return  (has('win16') || has('win32') || has('win64'))
 endfunction
 
+" let vim recognize markdown file extension
+"au BufRead,BufNewFile *.md set filetype=markdown
+
 " setting up for windows
 if WINDOWS()
   set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after

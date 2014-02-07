@@ -97,6 +97,9 @@ Bundle 'elzr/vim-json'
 Bundle 'vim-ruby/vim-ruby'
 " rails support
 Bundle 'tpope/vim-rails'
+
+" markdown support
+Bundle 'plasticboy/vim-markdown'
 "======================================================="
 
 
