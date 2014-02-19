@@ -166,7 +166,9 @@ let g:vimwiki_list=[{'path' : '~/.vimwiki/main',
       \ {'path' : '~/.vimwiki/Github/',
       \'path_html' : '~/.vimwiki/Github/html'},
       \ {'path' : '~/.vimwiki/Mathematica/',
-      \'path_html' : '~/.vimwiki/Mathematica/html'} ]
+      \'path_html' : '~/.vimwiki/Mathematica/html'},
+      \ {'path' : '~/.vimwiki/write/',
+      \'path_html' : '~/.vimwiki/write/html'} ]
 
 " airline
 set laststatus=2
@@ -218,6 +220,10 @@ endif
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+
+" Try to get rid of vimwiki key binding to make tab work for auto complete
+" but failed :<
+" nmap <Plug>VimwikiNextLink <Plug>VimwikiNextLink
 
 " fencview
 let g:fencview_autodetect = 0
