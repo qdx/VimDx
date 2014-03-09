@@ -37,6 +37,8 @@ set nocompatible
 " hybrid line number
 set relativenumber
 set number
+" syntax folding
+set foldmethod=syntax
 " use 2 space as tab
 set tabstop=2
 set shiftwidth=2
@@ -168,7 +170,9 @@ let g:vimwiki_list=[{'path' : '~/.vimwiki/main',
       \ {'path' : '~/.vimwiki/Mathematica/',
       \'path_html' : '~/.vimwiki/Mathematica/html'},
       \ {'path' : '~/.vimwiki/write/',
-      \'path_html' : '~/.vimwiki/write/html'} ]
+      \'path_html' : '~/.vimwiki/write/html'},
+      \ {'path' : '~/.vimwiki/msproject/',
+      \'path_html' : '~/.vimwiki/msprojec/html'} ]
 
 " airline
 set laststatus=2
