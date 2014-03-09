@@ -1,11 +1,10 @@
-" git wrapper
-Bundle 'tpope/vim-fugitive'
-" fast html coding
-Bundle 'mattn/emmet-vim'
+"======================================================="
+" Utilities
+"======================================================="
+" encoding plugin
+Bundle 'vim-scripts/FencView.vim'
 " file browser
 Bundle 'scrooloose/nerdtree'
-" comment just anything
-Bundle 'scrooloose/nerdcommenter'
 " personal wiki
 Bundle 'vimwiki/vimwiki'
 " color schemes
@@ -42,8 +41,10 @@ Bundle 'scrooloose/syntastic'
 Bundle 'godlygeek/tabular'
 " class structure dispaly
 Bundle 'majutsushi/tagbar'
-" encoding plugin
-Bundle 'vim-scripts/FencView.vim'
+" git wrapper
+Bundle 'tpope/vim-fugitive'
+" fast html coding
+Bundle 'mattn/emmet-vim'
 
 "======================================================="
 " Platform dependent
@@ -67,6 +68,9 @@ endif
 "======================================================="
 " Programming language Enhancemeng
 "======================================================="
+" comment just anything
+Bundle 'scrooloose/nerdcommenter'
+
 " python enhancement
 Bundle 'klen/python-mode'
 Bundle 'pythoncomplete'

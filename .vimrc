@@ -100,7 +100,7 @@ set splitbelow
 " change the leader key
 let mapleader = ','
 
-" Initialize directories, mainly borrowed from Steve who wrote spf13-vim configuration
+" Initialize directories, borrowed from Steve who wrote spf13-vim configuration
 function! InitializeDirectories()
   let parent = $HOME
   let prefix = 'vim'
