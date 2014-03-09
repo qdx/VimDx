@@ -77,7 +77,7 @@ Bundle 'pythoncomplete'
 Bundle 'python.vim'
 
 " haskell enhancement
-Bundle 'lukerandall/haskellmode-vim'
+"Bundle 'lukerandall/haskellmode-vim'
 Bundle 'dag/vim2hs'
 " type checking and error checking
 Bundle 'eagletmt/ghcmod-vim'
@@ -97,6 +97,15 @@ Bundle 'pangloss/vim-javascript'
 " json enhancement
 Bundle 'elzr/vim-json'
 
+" complete for haskell
+"Bundle 'eagletmt/neco-ghc'
+" type checking and error checking
+"Bundle 'eagletmt/ghcmod-vim'
+" haskell enhancement
+" Bundle 'lukerandall/haskellmode-vim'
+" display unicode in haskell source file
+Bundle 'Twinside/vim-haskellConceal'
+
 " ruby support
 Bundle 'vim-ruby/vim-ruby'
 " rails support
@@ -104,12 +113,8 @@ Bundle 'tpope/vim-rails'
 
 " markdown support
 Bundle 'plasticboy/vim-markdown'
-"======================================================="
 
 
-" complete for haskell
-" Bundle 'eagletmt/neco-ghc'
-"
 " context switch to better line numbers
 " Bundle 'myusuf3/numbers.vim'
 "
