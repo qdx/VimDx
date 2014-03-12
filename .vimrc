@@ -22,6 +22,10 @@ if WINDOWS()
   endif
 endif
 
+if has('gui_running')
+  set guioptions-=T           " Remove the toolbar
+endif
+
 
 " set vim to support 256 colors since gnome-terminal do support that
 if $COLORTERM == 'gnome-terminal'
