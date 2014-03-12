@@ -14,14 +14,14 @@ if WINDOWS()
   set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
   set langmenu=zh_CN.UTF-8
   language message zh_CN.UTF-8
+  " setting up for gvim
+  if has('gui_running')
+    set guioptions-=T           " Remove the toolbar
+    set lines=40                " 40 lines of text instead of 24
+    set guifont=Consolas:h11:cANSI	"set font
+  endif
 endif
 
-" setting up for gvim
-if has('gui_running')
-  set guioptions-=T           " Remove the toolbar
-  set lines=40                " 40 lines of text instead of 24
-  set guifont=Consolas:h11:cANSI	"set font
-endif
 
 " set vim to support 256 colors since gnome-terminal do support that
 if $COLORTERM == 'gnome-terminal'
