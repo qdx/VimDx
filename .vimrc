@@ -255,6 +255,9 @@ nmap <F12> :tabnew ~/.vimrc<CR>
 " map some insert mode shortcut
 inoremap <c-l> <End>
 inoremap <c-h> <Home>
+" redef C-j to C-g
+imap <C-g> <Plug>IMAP_JumpForward
+nmap <C-g> <Plug>IMAP_JumpForward
 " map normal mode window moves
 noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
